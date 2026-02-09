@@ -7,8 +7,8 @@ const projects = [
         description:
             "AI-powered portfolio generator that creates developer portfolios from GitHub data using LLaMA 3.1 for content generation.",
         skills: ["Next.js", "TypeScript", "Drizzle ORM", "PostgreSQL", "Groq AI", "Octokit"],
-        github: "#",
-        demo: "#",
+        github: "https://github.com/k4rtikay/ai-folio",
+        demo: "https://gitxhibit.vercel.app/",
         wip: false,
     },
     {
@@ -16,8 +16,8 @@ const projects = [
         description:
             "Open source React component library with animated, accessible UI components and MDX documentation.",
         skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Motion"],
-        github: "#",
-        demo: "#",
+        github: "https://github.com/k4rtikay/ui-library",
+        demo: "https://flow-kit-beta.vercel.app/",
         wip: false,
     },
     {
@@ -25,8 +25,8 @@ const projects = [
         description:
             "Color palette generator that extracts colors from 600+ Pokémon sprites with Firebase auth and palette persistence.",
         skills: ["React", "Firebase", "ColorThief", "Framer Motion", "SCSS", "Vite"],
-        github: "#",
-        demo: "#",
+        github: "https://github.com/k4rtikay/pokedex",
+        demo: "https://huedex.netlify.app/",
         wip: false,
     },
 ];
