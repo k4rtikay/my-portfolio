@@ -1,65 +1,107 @@
-import Image from "next/image";
+const projects = [
+  {
+    name: "Project One",
+    description: "A brief description of what this project does and the problem it solves.",
+    link: "https://github.com/kartikeya",
+    wip: false,
+  },
+  {
+    name: "Project Two",
+    description: "Another project with interesting technical challenges and solutions.",
+    link: "https://github.com/kartikeya",
+    wip: false,
+  },
+  {
+    name: "Project Three",
+    description: "Currently building something exciting. Stay tuned.",
+    link: "https://github.com/kartikeya",
+    wip: true,
+  },
+];
+
+const socials = [
+  { name: "Twitter", href: "https://twitter.com/kartikeya" },
+  { name: "GitHub", href: "https://github.com/kartikeya" },
+  { name: "LinkedIn", href: "https://linkedin.com/in/kartikeya" },
+  { name: "Email", href: "mailto:hello@kartikeya.dev" },
+];
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="mx-auto max-w-[650px] px-6 py-24 md:py-32">
+      {/* Hero */}
+      <section className="mb-16">
+        <h1 className="text-2xl font-semibold tracking-tight mb-4">
+          Kartikeya
+        </h1>
+        <p className="text-muted text-lg leading-relaxed">
+          Crafting interfaces and experiences. Design engineer exploring the intersection of design and code.
+        </p>
+      </section>
+
+      {/* About */}
+      <section className="mb-16">
+        <h2 className="text-sm font-medium text-muted uppercase tracking-wide mb-4">
+          About
+        </h2>
+        <div className="space-y-4 leading-relaxed">
+          <p>
+            I&apos;m a developer who cares deeply about how things look and feel.
+            I believe great software is built at the intersection of design and engineering.
+          </p>
+          <p>
+            Currently focused on building polished web experiences and learning the craft of interface design.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Projects */}
+      <section className="mb-16">
+        <h2 className="text-sm font-medium text-muted uppercase tracking-wide mb-4">
+          Projects
+        </h2>
+        <ul className="space-y-6">
+          {projects.map((project) => (
+            <li key={project.name}>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block no-underline"
+              >
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="font-medium group-hover:underline">
+                    {project.name}
+                  </span>
+                  {project.wip && <span className="badge">WIP</span>}
+                </div>
+                <p className="text-muted text-sm">{project.description}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Contact */}
+      <section>
+        <h2 className="text-sm font-medium text-muted uppercase tracking-wide mb-4">
+          Connect
+        </h2>
+        <ul className="flex flex-wrap gap-x-4 gap-y-2">
+          {socials.map((social) => (
+            <li key={social.name}>
+              <a
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm"
+              >
+                {social.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </main>
   );
 }
