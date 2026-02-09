@@ -1,21 +1,32 @@
+import { ExternalLink } from "lucide-react";
+
 const projects = [
   {
-    name: "Project One",
-    description: "A brief description of what this project does and the problem it solves.",
-    link: "https://github.com/kartikeya",
+    name: "GitXhibit",
+    description:
+      "AI-powered portfolio generator that creates developer portfolios from GitHub data using LLaMA 3.1 for content generation.",
+    skills: ["Next.js", "TypeScript", "Drizzle ORM", "PostgreSQL", "Groq AI", "Octokit"],
+    github: "#",
+    demo: "#",
     wip: false,
   },
   {
-    name: "Project Two",
-    description: "Another project with interesting technical challenges and solutions.",
-    link: "https://github.com/kartikeya",
+    name: "Flow-Kit",
+    description:
+      "Open source React component library with animated, accessible UI components and MDX documentation.",
+    skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Motion"],
+    github: "#",
+    demo: "#",
     wip: false,
   },
   {
-    name: "Project Three",
-    description: "Currently building something exciting. Stay tuned.",
-    link: "https://github.com/kartikeya",
-    wip: true,
+    name: "HueDex",
+    description:
+      "Color palette generator that extracts colors from 600+ Pokémon sprites with Firebase auth and palette persistence.",
+    skills: ["React", "Firebase", "ColorThief", "Framer Motion", "SCSS", "Vite"],
+    github: "#",
+    demo: "#",
+    wip: false,
   },
 ];
 
@@ -35,7 +46,8 @@ export default function Home() {
           Kartikeya
         </h1>
         <p className="text-muted text-lg leading-relaxed">
-          Crafting interfaces and experiences. Design engineer exploring the intersection of design and code.
+          Crafting interfaces and experiences. Design engineer exploring the
+          intersection of design and code.
         </p>
       </section>
 
@@ -46,11 +58,13 @@ export default function Home() {
         </h2>
         <div className="space-y-4 leading-relaxed">
           <p>
-            I&apos;m a developer who cares deeply about how things look and feel.
-            I believe great software is built at the intersection of design and engineering.
+            I&apos;m a developer who cares deeply about how things look and
+            feel. I believe great software is built at the intersection of
+            design and engineering.
           </p>
           <p>
-            Currently focused on building polished web experiences and learning the craft of interface design.
+            Currently focused on building polished web experiences and learning
+            the craft of interface design.
           </p>
         </div>
       </section>
@@ -60,23 +74,44 @@ export default function Home() {
         <h2 className="text-sm font-medium text-muted uppercase tracking-wide mb-4">
           Projects
         </h2>
-        <ul className="space-y-6">
+        <ul className="space-y-8">
           {projects.map((project) => (
             <li key={project.name}>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block no-underline"
-              >
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="font-medium group-hover:underline">
-                    {project.name}
-                  </span>
+              <div className="flex items-center justify-between gap-4 mb-2">
+                <div className="flex items-center gap-2">
+                  <span className="font-medium">{project.name}</span>
                   {project.wip && <span className="badge">WIP</span>}
                 </div>
-                <p className="text-muted text-sm">{project.description}</p>
-              </a>
+                <div className="flex items-center gap-3">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-muted hover:text-foreground transition-colors"
+                  >
+                    Source
+                  </a>
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-sm text-muted hover:text-foreground transition-colors"
+                  >
+                    Demo
+                    <ExternalLink size={12} />
+                  </a>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-1.5 mb-2">
+                {project.skills.map((skill) => (
+                  <span key={skill} className="skill-pill">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+              <p className="text-muted text-sm leading-relaxed">
+                {project.description}
+              </p>
             </li>
           ))}
         </ul>

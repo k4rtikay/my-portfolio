@@ -57,3 +57,16 @@ a:hover {
   border-radius: 4px;
   text-decoration: none;
 }
+
+/* Skill pills */
+.skill-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 400;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
