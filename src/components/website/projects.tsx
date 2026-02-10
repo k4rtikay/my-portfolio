@@ -34,7 +34,7 @@ const projects = [
 export function Projects() {
     return (
         <section className="mb-16">
-            <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-4">
+            <h2 className="text-sm font-medium text-muted-foreground tracking-wide mb-4">
                 Projects
             </h2>
             <ul className="space-y-8">
@@ -42,7 +42,7 @@ export function Projects() {
                     <li key={project.name}>
                         <div className="flex items-center justify-between gap-4 mb-2">
                             <div className="flex items-center gap-2">
-                                <span className="font-medium">{project.name}</span>
+                                <span className="font-medium text-sm tracking-wide">{project.name}</span>
                                 {project.wip && (
                                     <Badge variant="secondary" className="text-xs">
                                         WIP
@@ -62,23 +62,25 @@ export function Projects() {
                                     href={project.demo}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                                    className="inline-flex items-center gap-1 text-sm text-foreground hover:text-foreground transition-colors"
                                 >
                                     Demo
                                     <ExternalLink size={12} />
                                 </a>
                             </div>
                         </div>
-                        <div className="flex flex-wrap gap-1.5 mb-2">
+
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                            {project.description}
+                        </p>
+
+                        <div className="flex flex-wrap gap-1.5 my-2">
                             {project.skills.map((skill) => (
-                                <Badge key={skill} variant="outline" className="text-xs font-normal">
+                                <Badge key={skill} variant="outline" className="text-xs font-normal rounded-md">
                                     {skill}
                                 </Badge>
                             ))}
                         </div>
-                        <p className="text-muted-foreground text-sm leading-relaxed">
-                            {project.description}
-                        </p>
                     </li>
                 ))}
             </ul>

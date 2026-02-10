@@ -11,7 +11,7 @@ export function Hero() {
         <section className="mb-16">
             <h1 className="text-xl font-semibold mb-2">Kartikeya Mishra</h1>
             <p className={`${instrumentSerif.className} text-lg text-foreground leading-relaxed`}>
-                Crafting interfaces and experiences.
+                Crafting interfaces and experiences.    
             </p>
         </section>
     );
