@@ -1,5 +1,4 @@
-import { Hero, About, Projects, Contact, Footer, GithubHeatmap } from "@/components/website";
-import Dither from "@/components/Dither";
+import { Hero, About, Projects, Contact, Footer, GithubHeatmap, ThemedDither } from "@/components/website";
 
 export default function Home() {
   return (
@@ -11,16 +10,7 @@ export default function Home() {
             <span className="absolute -top-[7px] -left-[7px] -translate-x-1/2 -translate-y-1/2 text-xs text-muted-foreground/30 select-none z-10 leading-none">+</span>
             <span className="absolute -bottom-[7px] -right-[7px] translate-x-1/2 translate-y-1/2 text-xs text-muted-foreground/30 select-none z-10 leading-none">+</span>
             <div className="h-full border border-border outline-1 outline-muted-foreground/10 outline-offset-6 overflow-hidden">
-              <Dither
-                waveColor={[0.5, 0.5, 0.5]}
-                disableAnimation={false}
-                enableMouseInteraction
-                mouseRadius={0.3}
-                colorNum={4}
-                waveAmplitude={0.3}
-                waveFrequency={3}
-                waveSpeed={0.05}
-              />
+              <ThemedDither/>
             </div>
           </div>
           <About />
