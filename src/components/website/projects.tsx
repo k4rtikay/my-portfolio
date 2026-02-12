@@ -34,15 +34,15 @@ const projects = [
 export function Projects() {
     return (
         <section className="mb-16">
-            <h2 className="text-sm font-medium text-muted-foreground tracking-wide mb-4">
+            <h2 className="text-base sm:text-sm font-medium text-muted-foreground tracking-wide mb-4">
                 Projects
             </h2>
-            <ul className="space-y-8">
+            <ul className="space-y-10 sm:space-y-8">
                 {projects.map((project) => (
                     <li key={project.name}>
                         <div className="flex items-center justify-between gap-4 mb-2">
                             <div className="flex items-center gap-2">
-                                <span className="font-medium text-sm tracking-wide">{project.name}</span>
+                                <span className="font-medium text-base sm:text-sm tracking-wide">{project.name}</span>
                                 {project.wip && (
                                     <Badge variant="secondary" className="text-xs">
                                         WIP
@@ -54,7 +54,7 @@ export function Projects() {
                                     href={project.github}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                                    className="text-base sm:text-sm text-muted-foreground hover:text-foreground transition-colors"
                                 >
                                     Source
                                 </a>
@@ -62,7 +62,7 @@ export function Projects() {
                                     href={project.demo}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-1 text-sm text-foreground hover:text-foreground transition-colors"
+                                    className="inline-flex items-center gap-1 text-base sm:text-sm text-foreground hover:text-foreground transition-colors"
                                 >
                                     Demo
                                     <ExternalLink size={12} />
@@ -70,7 +70,7 @@ export function Projects() {
                             </div>
                         </div>
 
-                        <p className="text-muted-foreground text-sm leading-relaxed">
+                        <p className="text-muted-foreground text-base sm:text-sm leading-relaxed">
                             {project.description}
                         </p>
 

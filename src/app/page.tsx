@@ -2,8 +2,8 @@ import { Hero, About, Projects, Contact, Footer, GithubHeatmap, ThemedDither } f
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col">
-      <main className="mx-auto max-w-[650px] px-6 py-24 md:py-32 flex-1">
+    <div className="flex min-h-screen w-full flex-col">
+      <main className="mx-auto w-full max-w-[650px] px-8 sm:px-6 py-24 md:py-32 flex-1">
         <div className="grid grid-cols-1 sm:grid-cols-[1fr_200px] grid-rows-[auto] sm:grid-rows-[auto_auto] gap-6 sm:gap-x-6 sm:gap-y-12 mb-16">
           <Hero />
           <div className="relative sm:row-span-2 order-2 sm:order-none">

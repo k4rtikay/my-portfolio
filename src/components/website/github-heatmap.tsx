@@ -60,7 +60,7 @@ export function GithubHeatmap({ username }: HeatmapProps) {
 
     return (
         <section className="mb-16">
-            <h2 className="text-sm font-medium text-muted-foreground tracking-wide mb-6">
+            <h2 className="text-base sm:text-sm font-medium text-muted-foreground tracking-wide mb-6">
                 Activity
             </h2>
             <div className="relative z-[1] w-full overflow-x-auto bg-background heatmap-scroll">
