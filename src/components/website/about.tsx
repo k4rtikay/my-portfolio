@@ -1,6 +1,6 @@
 export function About() {
     return (
-        <section className="mb-16">
+        <section>
             <h2 className="text-sm font-medium text-muted-foreground tracking-wide mb-4">
                 About
             </h2>
