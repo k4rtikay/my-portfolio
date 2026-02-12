@@ -156,3 +156,29 @@ body::after {
     linear-gradient(90deg, currentColor 1px, transparent 1px);
   background-size: 16px 16px;
 }
+
+.heatmap-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.heatmap-scroll:hover {
+  scrollbar-color: oklch(0.5 0 0 / 0.2) transparent;
+}
+
+.heatmap-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.heatmap-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.heatmap-scroll::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 2px;
+}
+
+.heatmap-scroll:hover::-webkit-scrollbar-thumb {
+  background: oklch(0.5 0 0 / 0.2);
+}
