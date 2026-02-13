@@ -1,6 +1,6 @@
 const socials = [
-    { name: "Twitter", href: "https://twitter.com/kartikeya" },
-    { name: "GitHub", href: "https://github.com/kartikeya" },
+    { name: "Twitter", href: "https://twitter.com/br1dge_" },
+    { name: "GitHub", href: "https://github.com/k4rtikay" },
     { name: "LinkedIn", href: "https://linkedin.com/in/kartikeya" },
     { name: "Email", href: "mailto:hello@kartikeya.dev" },
 ];
@@ -26,7 +26,11 @@ export function Contact() {
                 ))}
             </ul> */}
             <div className="text-base sm:text-sm leading-relaxed tracking-wide">
-                Reach out to me at <a href={socials[0].href} className="font-medium underline decoration-muted-foreground/30 hover:decoration-foreground transition-colors ease-out">@kkmis</a> or email me at <a href={socials[3].href} className="font-medium underline decoration-muted-foreground/30 hover:decoration-foreground transition-colors">email@kmisra.me</a>
+                Reach out to me at <a href={socials[0].href} target="_blank" rel="noopener noreferrer" className="font-medium underline decoration-muted-foreground/30 hover:decoration-foreground transition-colors ease-out">@kkmis</a> or <a href={socials[3].href} target="_blank" rel="noopener noreferrer" className="font-medium underline decoration-muted-foreground/30 hover:decoration-foreground transition-colors">email me</a>
+            </div>
+
+            <div className="text-base sm:text-sm leading-relaxed tracking-wide">
+                You can see more of my work on my <a href={socials[1].href} target="_blank" rel="noopener noreferrer" className="font-medium underline decoration-muted-foreground/30 hover:decoration-foreground transition-colors ease-out">Github</a>.
             </div>
 
         </section>
