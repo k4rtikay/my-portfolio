@@ -1,4 +1,4 @@
-import { ExternalLink } from "lucide-react";
+import { ExternalLinkIcon, CodeIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const projects = [
@@ -42,32 +42,23 @@ export function Projects() {
                     <li key={project.name}>
                         <div className="flex items-center justify-between gap-4 mb-2">
                             <div className="flex items-center gap-2">
-                                <span className="font-medium text-base sm:text-sm tracking-wide">{project.name}</span>
+                                <a href={project.demo} target="_blank" rel="noopener noreferrer" className="font-medium text-base sm:text-sm tracking-wide inline-flex items-center gap-2 underline decoration-transparent hover:decoration-current transition-all duration-200 ease-out">{project.name} <ExternalLinkIcon size={12} className="inline-block" /></a>
                                 {project.wip && (
                                     <Badge variant="secondary" className="text-xs">
                                         WIP
                                     </Badge>
                                 )}
                             </div>
-                            <div className="flex items-center gap-3">
-                                <a
-                                    href={project.github}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-base sm:text-sm text-muted-foreground hover:text-foreground transition-colors"
-                                >
-                                    Source
-                                </a>
-                                <a
-                                    href={project.demo}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-1 text-base sm:text-sm text-foreground hover:text-foreground transition-colors"
-                                >
-                                    Demo
-                                    <ExternalLink size={12} />
-                                </a>
-                            </div>
+
+                            <a
+                                href={project.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-sm sm:text-xs text-muted-foreground hover:text-foreground transition-colors bg-muted px-2 py-1 rounded-md"
+                            >
+                                <CodeIcon size={12} className="inline-block" /> Code
+                            </a>
+
                         </div>
 
                         <p className="text-muted-foreground text-base sm:text-sm leading-relaxed">
