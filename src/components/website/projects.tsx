@@ -1,9 +1,18 @@
+"use client";
+
 import { ExternalLinkIcon, CodeIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import {
+    Accordion,
+    AccordionItem,
+    AccordionTrigger,
+    AccordionContent,
+} from "@/components/ui/accordion";
 
 const projects = [
     {
         name: "GitXhibit",
+        year: "2025",
         description:
             "AI-powered portfolio generator that creates developer portfolios from GitHub data using LLaMA 3.1 for content generation.",
         skills: ["Next.js", "TypeScript", "Drizzle ORM", "PostgreSQL", "Groq AI", "Octokit"],
@@ -13,15 +22,17 @@ const projects = [
     },
     {
         name: "Flow-Kit",
+        year: "2025",
         description:
             "Open source React component library with animated, accessible UI components and MDX documentation.",
         skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Motion"],
         github: "https://github.com/k4rtikay/ui-library",
         demo: "https://flow-kit-beta.vercel.app/",
-        wip: false,
+        wip: true,
     },
     {
         name: "HueDex",
+        year: "2025",
         description:
             "Color palette generator that extracts colors from 600+ Pokémon sprites with Firebase auth and palette persistence.",
         skills: ["React", "Firebase", "ColorThief", "Framer Motion", "SCSS", "Vite"],
@@ -37,44 +48,60 @@ export function Projects() {
             <h2 className="text-base sm:text-sm font-medium text-muted-foreground tracking-wide mb-4">
                 Projects
             </h2>
-            <ul className="space-y-10 sm:space-y-8">
+            <Accordion type="single" collapsible defaultValue="GitXhibit">
                 {projects.map((project) => (
-                    <li key={project.name}>
-                        <div className="flex items-center justify-between gap-4 mb-2">
-                            <div className="flex items-center gap-2">
-                                <a href={project.demo} target="_blank" rel="noopener noreferrer" className="font-medium text-base sm:text-sm tracking-wide inline-flex items-center gap-2 underline decoration-transparent hover:decoration-current transition-all duration-200 ease-out">{project.name} <ExternalLinkIcon size={12} className="inline-block" /></a>
-                                {project.wip && (
-                                    <Badge variant="secondary" className="text-xs">
-                                        WIP
-                                    </Badge>
-                                )}
+                    <AccordionItem key={project.name} value={project.name}>
+                        <AccordionTrigger className="hover:no-underline">
+                            <div className="flex items-center justify-between w-full">
+                                <a
+                                    href={project.demo}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="font-medium text-base sm:text-sm tracking-wide inline-flex items-center gap-1.5 underline decoration-transparent hover:decoration-current transition-all duration-200 ease-out"
+                                    onClick={(e) => e.stopPropagation()}
+                                >
+                                    {project.name}
+                                    <ExternalLinkIcon size={12} />
+                                </a>
+                                <div className="flex items-center gap-2">
+                                    {project.wip && (
+                                        <Badge variant="secondary" className="text-xs">
+                                            WIP
+                                        </Badge>
+                                    )}
+                                    <span className="text-xs text-muted-foreground font-normal tabular-nums">
+                                        {project.year}
+                                    </span>
+                                </div>
                             </div>
+                        </AccordionTrigger>
+                        <AccordionContent>
+                            <div className="space-y-3">
+                                <p className="text-muted-foreground text-base sm:text-sm leading-relaxed">
+                                    {project.description}
+                                </p>
 
-                            <a
-                                href={project.github}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-sm sm:text-xs text-muted-foreground hover:text-foreground transition-colors bg-muted px-2 py-1 rounded-md"
-                            >
-                                <CodeIcon size={12} className="inline-block" /> Code
-                            </a>
+                                <div className="flex flex-wrap gap-1.5">
+                                    {project.skills.map((skill) => (
+                                        <Badge key={skill} variant="outline" className="text-xs font-normal rounded-md">
+                                            {skill}
+                                        </Badge>
+                                    ))}
+                                </div>
 
-                        </div>
-
-                        <p className="text-muted-foreground text-base sm:text-sm leading-relaxed">
-                            {project.description}
-                        </p>
-
-                        <div className="flex flex-wrap gap-1.5 my-2">
-                            {project.skills.map((skill) => (
-                                <Badge key={skill} variant="outline" className="text-xs font-normal rounded-md">
-                                    {skill}
-                                </Badge>
-                            ))}
-                        </div>
-                    </li>
+                                <a
+                                    href={project.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-sm sm:text-xs text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1.5 bg-muted px-2.5 py-1 rounded-md"
+                                >
+                                    <CodeIcon size={12} /> Source
+                                </a>
+                            </div>
+                        </AccordionContent>
+                    </AccordionItem>
                 ))}
-            </ul>
+            </Accordion>
         </section>
     );
 }
