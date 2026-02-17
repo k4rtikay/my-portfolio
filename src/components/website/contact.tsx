@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { Mail } from "lucide-react";
 import { HoverSwap } from "./hover-swap";
 
 const socials = [
@@ -21,13 +20,27 @@ export function Contact() {
                 Connect
             </h2>
 
-            <div className="text-base sm:text-sm leading-relaxed tracking-wide">
-                Reach out to me at{" "}
+            <p className="mt-4 text-base sm:text-sm leading-loose tracking-wide">
+                <HoverSwap
+                    href={socials[3].href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    defaultContent="Email me"
+                    defaultClassName={linkClassName}
+                    hoverContent={
+                        <>
+                            hello@kartikeya.dev
+                        </>
+                    }
+                    hoverClassName={pillClassName}
+                />
+                {" "}or{" "}
+                reach out to me on{" "}
                 <HoverSwap
                     href={socials[0].href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    defaultContent="@kkmis"
+                    defaultContent="Twitter"
                     defaultClassName={linkClassName}
                     hoverContent={
                         <>
@@ -37,30 +50,15 @@ export function Contact() {
                     }
                     hoverClassName={pillClassName}
                 />
-                {" "}or{" "}
-                <HoverSwap
-                    href={socials[3].href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    defaultContent="email me"
-                    defaultClassName={linkClassName}
-                    hoverContent={
-                        <>
-                            <Mail className="size-3" />
-                            hello@kartikeya.dev
-                        </>
-                    }
-                    hoverClassName={pillClassName}
-                />
-            </div>
+            </p>
 
-            <div className="text-base sm:text-sm leading-relaxed tracking-wide">
-                You can see more of my work on my{" "}
+            <p className="text-base sm:text-sm leading-loose tracking-wide">
+                You can see more of my work on{" "}
                 <HoverSwap
                     href={socials[1].href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    defaultContent="github"
+                    defaultContent="GitHub"
                     defaultClassName={linkClassName}
                     hoverContent={
                         <>
@@ -70,7 +68,7 @@ export function Contact() {
                     }
                     hoverClassName={pillClassName}
                 />
-            </div>
+            </p>
         </section>
     );
 }

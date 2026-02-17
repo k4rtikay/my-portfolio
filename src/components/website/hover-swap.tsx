@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
-import { type ReactNode, useState } from "react";
+import { type ReactNode, useCallback, useEffect, useRef, useState } from "react";
 
 interface HoverSwapProps {
     href: string;
@@ -23,13 +23,34 @@ export function HoverSwap({
     rel,
 }: HoverSwapProps) {
     const [hovered, setHovered] = useState(false);
+    const ref = useRef<HTMLSpanElement>(null);
+
+    // Safety: if the element shifts (e.g. text wraps) and the pointer
+    // is no longer over it, reset hover to prevent stuck state.
+    const checkPointer = useCallback((e: PointerEvent) => {
+        if (!hovered || !ref.current) return;
+        const rect = ref.current.getBoundingClientRect();
+        const inside =
+            e.clientX >= rect.left &&
+            e.clientX <= rect.right &&
+            e.clientY >= rect.top &&
+            e.clientY <= rect.bottom;
+        if (!inside) setHovered(false);
+    }, [hovered]);
+
+    useEffect(() => {
+        if (!hovered) return;
+        window.addEventListener("pointermove", checkPointer);
+        return () => window.removeEventListener("pointermove", checkPointer);
+    }, [hovered, checkPointer]);
 
     return (
         <motion.span
+            ref={ref}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            className="inline-flex items-baseline"
-            layout
+            className="inline-flex items-baseline h-[1lh]"
+        // layout
         >
             <AnimatePresence mode="wait">
                 {hovered ? (
