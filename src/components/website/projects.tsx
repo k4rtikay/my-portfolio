@@ -53,7 +53,7 @@ export function Projects() {
                 Projects
             </h2>
             <LayoutGroup id="projects">
-                <Accordion type="single" collapsible defaultValue="GitXhibit">
+                <Accordion type="single" collapsible>
                     {projects.map((project) => (
                         <AccordionItem key={project.name} value={project.name}>
                             <div
@@ -91,7 +91,7 @@ export function Projects() {
                                         </a>
                                         <div className="flex items-center gap-2">
                                             {project.wip && (
-                                                <Badge variant="secondary" className="text-xs">
+                                                <Badge variant="secondary" className="text-xs bg-muted">
                                                     WIP
                                                 </Badge>
                                             )}
