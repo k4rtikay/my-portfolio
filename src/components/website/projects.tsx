@@ -65,7 +65,7 @@ export function Projects() {
                                     {hoveredProject === project.name && (
                                         <motion.div
                                             layoutId="project-hover"
-                                            className="absolute inset-0 -mx-8 sm:-mx-6 bg-muted/50 rounded-md"
+                                            className="absolute inset-0 -mx-8 sm:-mx-6 bg-foreground/5 rounded-md"
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
                                             exit={{ opacity: 0 }}
