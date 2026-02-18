@@ -102,9 +102,11 @@ export function Projects() {
                                     </div>
                                 </AccordionTrigger>
                             </div>
-                            <AccordionContent>
+                            <AccordionContent
+                            className="px-2"
+                            >
                                 <motion.div
-                                    className="space-y-3"
+                                    className="mt-2 space-y-2"
                                     initial={{ opacity: 0, y: -5 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{
@@ -129,7 +131,7 @@ export function Projects() {
                                         href={project.github}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-sm sm:text-xs text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1.5 bg-muted px-2.5 py-1 rounded-md"
+                                        className="mt-2 text-sm sm:text-xs text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1.5 bg-muted px-2.5 py-1 rounded-md"
                                     >
                                         <CodeIcon size={12} /> Source
                                     </a>
