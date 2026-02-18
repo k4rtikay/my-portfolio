@@ -7,11 +7,11 @@ export function About() {
             <div className="space-y-4 text-base sm:text-sm tracking-wide leading-relaxed">
                 <p>
                     I&apos;m a developer who cares deeply about how things look and feel.
-                    I believe great software is built at the intersection of design and
+                    I believe that great software is built at the intersection of design and
                     engineering.
                 </p>
                 <p>
-                    Currently focused on building polished web experiences and learning
+                    Currently focused on building polished web experiences, shipping fast and learning
                     the craft of interface design.
                 </p>
             </div>
