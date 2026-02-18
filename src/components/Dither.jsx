@@ -287,7 +287,8 @@ export default function Dither({
   disableAnimation = false,
   enableMouseInteraction = true,
   mouseRadius = 1,
-  mouseStrength = -0.5
+  mouseStrength = -0.5,
+  ...rest
 }) {
   return (
     <Canvas
@@ -295,6 +296,7 @@ export default function Dither({
       camera={{ position: [0, 0, 6] }}
       dpr={1}
       gl={{ antialias: true, preserveDrawingBuffer: true }}
+      {...rest}
     >
       <DitheredWaves
         waveSpeed={waveSpeed}
