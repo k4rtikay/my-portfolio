@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { ActivityCalendar } from "react-activity-calendar";
 import { useTheme } from "next-themes";
 
@@ -14,6 +15,11 @@ const heatmapTheme = {
 
 export function GithubHeatmap({ data }: HeatmapProps) {
     const { resolvedTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     return (
         <section className="mb-16">
@@ -21,19 +27,23 @@ export function GithubHeatmap({ data }: HeatmapProps) {
                 Activity
             </h2>
             <div className="relative z-[1] w-full overflow-x-auto bg-background heatmap-scroll">
-                <ActivityCalendar
-                    data={data}
-                    fontSize={11}
-                    blockSize={10}
-                    blockMargin={3}
-                    blockRadius={1}
-                    colorScheme={resolvedTheme === "dark" ? "dark" : "light"}
-                    theme={heatmapTheme}
-                    labels={{
-                        totalCount: "{{count}} contributions in the last year",
-                    }}
-                    showWeekdayLabels
-                />
+                {mounted ? (
+                    <ActivityCalendar
+                        data={data}
+                        fontSize={11}
+                        blockSize={10}
+                        blockMargin={3}
+                        blockRadius={1}
+                        colorScheme={resolvedTheme === "dark" ? "dark" : "light"}
+                        theme={heatmapTheme}
+                        labels={{
+                            totalCount: "{{count}} contributions in the last year",
+                        }}
+                        showWeekdayLabels
+                    />
+                ) : (
+                    <div style={{ height: 108 }} />
+                )}
             </div>
         </section>
     );
