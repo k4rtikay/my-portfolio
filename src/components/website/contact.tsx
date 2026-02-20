@@ -10,7 +10,7 @@ const socials = [
     { name: "Email", href: "mailto:hello@kartikeya.dev" },
 ];
 
-const linkClassName = "font-medium underline decoration-muted-foreground/30 hover:decoration-foreground transition-colors ease-out";
+const linkClassName = "font-medium transition-colors ease-out";
 const pillClassName = "bg-muted px-2 rounded-full flex items-center gap-1";
 
 export function Contact() {

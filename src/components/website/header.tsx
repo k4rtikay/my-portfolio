@@ -1,10 +1,7 @@
 "use client";
 
 export function Header() {
-    // The header is intentionally taller than the visible blur zone.
-    // All layer masks fade out well before the bottom edge (max 70%),
-    // so no backdrop-filter compositing boundary exists at the bottom.
-    // This eliminates the hard "line" entirely.
+    
     const layers = [
         { blur: 0.15, start: 0, end: 0 },
         { blur: 0.25, start: 5, end: 5 },
