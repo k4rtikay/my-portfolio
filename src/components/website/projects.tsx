@@ -1,15 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import Image from "next/image";
 import { ExternalLinkIcon, CodeIcon } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { motion, LayoutGroup, AnimatePresence } from "motion/react";
-import {
-    Accordion,
-    AccordionItem,
-    AccordionTrigger,
-    AccordionContent,
-} from "@/components/ui/accordion";
+import { motion } from "motion/react";
 
 const projects = [
     {
@@ -20,6 +13,7 @@ const projects = [
         skills: ["Next.js", "TypeScript", "Drizzle ORM", "PostgreSQL", "Groq AI", "Octokit"],
         github: "https://github.com/k4rtikay/ai-folio",
         demo: "https://gitxhibit.vercel.app/",
+        image: "/gitxhibit-demo.png",
         wip: false,
     },
     {
@@ -30,6 +24,7 @@ const projects = [
         skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Motion"],
         github: "https://github.com/k4rtikay/ui-library",
         demo: "https://flow-kit-beta.vercel.app/",
+        image: "/flow-kit-demo.png",
         wip: true,
     },
     {
@@ -40,119 +35,102 @@ const projects = [
         skills: ["React", "Firebase", "ColorThief", "Framer Motion", "SCSS", "Vite"],
         github: "https://github.com/k4rtikay/pokedex",
         demo: "https://huedex.netlify.app/",
+        image: "/huedex-demo.png",
         wip: false,
     },
 ];
 
 export function Projects() {
-    const [hoveredProject, setHoveredProject] = useState<string | null>(null);
-    const [openProject, setOpenProject] = useState<string | undefined>(undefined);
-
-    const activeProject = hoveredProject ?? openProject;
-
     return (
         <section className="mb-16">
-            <h2 className="text-base sm:text-sm font-medium text-muted-foreground tracking-wide mb-4">
+            <h2 className="text-base sm:text-sm font-medium text-muted-foreground tracking-wide mb-6">
                 Projects
             </h2>
-            <LayoutGroup id="projects">
-                <Accordion
-                    type="single"
-                    collapsible
-                    value={openProject}
-                    onValueChange={(value) => setOpenProject(value || undefined)}
-                    className="space-y-1"
-                >
-                    {projects.map((project) => (
-                        <AccordionItem key={project.name} value={project.name}>
-                            <div
-                                className="relative"
-                                onMouseEnter={() => setHoveredProject(project.name)}
-                                onMouseLeave={() => setHoveredProject(null)}
-                            >
-                                <AnimatePresence>
-                                    {activeProject === project.name && (
-                                        <motion.div
-                                            layoutId="project-hover"
-                                            layout
-                                            className="absolute inset-0 -mx-8 sm:-mx-6 bg-foreground/5 rounded-md"
-                                            initial={{ opacity: 0 }}
-                                            animate={{ opacity: 1 }}
-                                            exit={{ opacity: 0 }}
-                                            transition={{
-                                                layout: {
-                                                    type: "spring",
-                                                    damping: 30,
-                                                    stiffness: 500,
-                                                },
-                                                opacity: { duration: 0.15 },
-                                            }}
-                                        />
+            <div className="space-y-12">
+                {projects.map((project, index) => (
+                    <motion.article
+                        key={project.name}
+                        initial={{ opacity: 0, y: 16 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                            duration: 0.4,
+                            delay: index * 0.1,
+                            ease: [0.25, 0.46, 0.45, 0.94],
+                        }}
+                        className="group -mx-4 sm:-mx-5 px-4 sm:px-5 py-4 rounded-xl transition-colors duration-300 ease-out hover:bg-muted/50"
+                    >
+                        {/* Text Content */}
+                        <div className="space-y-3">
+                            {/* Header: Title + Year/WIP */}
+                            <div className="flex items-center justify-between">
+                                <h3 className="font-medium text-base sm:text-sm tracking-wide text-foreground">
+                                    {project.name}
+                                </h3>
+                                <div className="flex items-center gap-2">
+                                    {project.wip && (
+                                        <span className="text-[11px] font-semibold tracking-wider uppercase text-amber-700 dark:text-amber-400 bg-amber-100 dark:bg-amber-400/15 px-2.5 py-0.5 rounded-full border border-amber-200 dark:border-amber-400/20">
+                                            WIP
+                                        </span>
                                     )}
-                                </AnimatePresence>
-                                <AccordionTrigger className="hover:no-underline relative z-10 py-2.5">
-                                    <div className="flex items-center justify-between w-full">
-                                        <a
-                                            href={project.demo}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="font-medium text-base sm:text-sm tracking-wide inline-flex items-center gap-1.5 underline decoration-transparent hover:decoration-current transition-all duration-200 ease-out"
-                                            onClick={(e) => e.stopPropagation()}
-                                        >
-                                            {project.name}
-                                            <ExternalLinkIcon size={12} />
-                                        </a>
-                                        <div className="flex items-center gap-2">
-                                            {project.wip && (
-                                                <Badge variant="secondary" className="text-xs bg-muted">
-                                                    WIP
-                                                </Badge>
-                                            )}
-                                            <span className="text-xs text-muted-foreground font-normal tabular-nums">
-                                                {project.year}
-                                            </span>
-                                        </div>
-                                    </div>
-                                </AccordionTrigger>
-                                <AccordionContent className="px-2">
-                                    <motion.div
-                                        className="mt-2 space-y-2"
-                                        initial={{ opacity: 0, y: -5 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{
-                                            type: "spring",
-                                            damping: 20,
-                                            stiffness: 200,
-                                        }}
-                                    >
-                                        <p className="text-muted-foreground text-base sm:text-sm leading-relaxed">
-                                            {project.description}
-                                        </p>
-
-                                        <div className="flex flex-wrap gap-1.5">
-                                            {project.skills.map((skill) => (
-                                                <Badge key={skill} variant="outline" className="text-xs font-normal rounded-md">
-                                                    {skill}
-                                                </Badge>
-                                            ))}
-                                        </div>
-
-                                        <a
-                                            href={project.github}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="mt-2 text-sm sm:text-xs text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1.5 bg-muted px-2.5 py-1 rounded-md"
-                                        >
-                                            <CodeIcon size={12} /> Source
-                                        </a>
-                                    </motion.div>
-                                </AccordionContent>
+                                    <span className="text-xs text-muted-foreground font-normal tabular-nums">
+                                        {project.year}
+                                    </span>
+                                </div>
                             </div>
-                        </AccordionItem>
-                    ))}
-                </Accordion>
-            </LayoutGroup>
+
+                            {/* Description */}
+                            <p className="text-muted-foreground text-base sm:text-sm leading-relaxed">
+                                {project.description}
+                            </p>
+
+                            {/* Skill Pills */}
+                            <div className="flex flex-wrap gap-1.5">
+                                {project.skills.map((skill) => (
+                                    <span
+                                        key={skill}
+                                        className="text-xs font-normal text-muted-foreground bg-muted/80 dark:bg-muted/50 px-2.5 py-0.5 rounded-full border border-border/50 transition-colors"
+                                    >
+                                        {skill}
+                                    </span>
+                                ))}
+                            </div>
+
+                            {/* Links */}
+                            <div className="flex items-center gap-3 pt-2">
+                                <a
+                                    href={project.demo}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-sm sm:text-xs font-medium text-white bg-blue-500 hover:bg-blue-600 dark:bg-blue-500 dark:hover:bg-blue-400 transition-all inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg shadow-sm"
+                                >
+                                    <ExternalLinkIcon size={13} />
+                                    Live Site
+                                </a>
+                                <a
+                                    href={project.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-sm sm:text-xs font-medium text-foreground/80 hover:text-foreground border border-border hover:border-foreground/20 transition-all inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg"
+                                >
+                                    <CodeIcon size={13} />
+                                    Source
+                                </a>
+                            </div>
+                        </div>
+
+                        {/* Project Image */}
+                        <div className="mt-4 overflow-hidden rounded-lg border border-border/60 shadow-sm">
+                            <Image
+                                src={project.image}
+                                alt={`${project.name} screenshot`}
+                                width={650}
+                                height={400}
+                                className="w-full h-auto object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                            />
+                        </div>
+                    </motion.article>
+                ))}
+            </div>
         </section>
     );
 }
-
