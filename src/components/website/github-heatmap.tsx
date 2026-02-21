@@ -5,8 +5,8 @@ import { ActivityCalendar } from "react-activity-calendar";
 import { useTheme } from "next-themes";
 
 const heatmapTheme = {
-    light: ["#ebedf0", "#c6c6c6", "#8c8c8c", "#525252", "#1a1a1a"],
-    dark: ["#1a1a1a", "#303030", "#4a4a4a", "#707070", "#d4d4d4"],
+    light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
+    dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
 };
 
 async function fetchHeatmapData() {
