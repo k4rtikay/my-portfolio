@@ -13,7 +13,7 @@ const projects = [
         skills: ["Next.js", "TypeScript", "Drizzle ORM", "PostgreSQL", "Groq AI", "Octokit"],
         github: "https://github.com/k4rtikay/ai-folio",
         demo: "https://gitxhibit.vercel.app/",
-        image: "/gitxhibit-demo.png",
+        image: "/gitxhibit-demo-1.png",
         wip: false,
     },
     {
