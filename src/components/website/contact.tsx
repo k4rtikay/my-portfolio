@@ -7,7 +7,7 @@ const socials = [
     { name: "Twitter", href: "https://twitter.com/br1dge_" },
     { name: "GitHub", href: "https://github.com/k4rtikay" },
     { name: "LinkedIn", href: "https://linkedin.com/in/kartikeya" },
-    { name: "Email", href: "mailto:hello@kartikeya.dev" },
+    { name: "Email", href: "mailto:k4rtikweb@gmail.com" },
 ];
 
 const linkClassName = "font-medium transition-colors ease-out";
@@ -29,7 +29,7 @@ export function Contact() {
                     defaultClassName={linkClassName}
                     hoverContent={
                         <>
-                            hello@kartikeya.dev
+                            k4rtikweb@gmail.com
                         </>
                     }
                     hoverClassName={pillClassName}
