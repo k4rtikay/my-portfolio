@@ -6,13 +6,11 @@ export function About() {
             </h2>
             <div className="space-y-4 text-base sm:text-sm tracking-wide leading-relaxed">
                 <p>
-                    I&apos;m a developer who cares deeply about how things look and feel.
-                    I believe that great software is built at the intersection of design and
-                    engineering.
+                    I&apos;m a full-stack developer who cares deeply about how things look, feel,
+                    and interact. I build polished web experiences from scratch - designing, developing, and shipping full-stack web applications end to end.
                 </p>
                 <p>
-                    Currently focused on building polished web experiences, shipping fast and learning
-                    the craft of interface design.
+                    Currently creating marketing websites for clients with Next.js.
                 </p>
             </div>
         </section>
