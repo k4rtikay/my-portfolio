@@ -16,7 +16,7 @@ const pillClassName = "bg-muted px-2 rounded-full flex items-center gap-1";
 export function Contact() {
     return (
         <section>
-            <h2 className="text-base sm:text-sm font-medium text-muted-foreground tracking-wide mb-4">
+            <h2 className="text-base sm:text-sm font-medium text-muted-foreground tracking-wide mb-4" id="contact">
                 Connect
             </h2>
 
