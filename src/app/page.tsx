@@ -1,4 +1,4 @@
-import { Hero, About, Projects, Contact, Footer, GithubHeatmap } from "@/components/website";
+import { Hero, About, Bento, Projects, Contact, Footer, GithubHeatmap } from "@/components/website";
 import { FadeIn } from "@/components/website/fade-in";
 import { Header } from "@/components/website/header";
 
@@ -16,12 +16,15 @@ export default function Home() {
           </div>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <Projects />
+          <Bento />
         </FadeIn>
         <FadeIn delay={0.2}>
-          <GithubHeatmap />
+          <Projects />
         </FadeIn>
         <FadeIn delay={0.3}>
+          <GithubHeatmap />
+        </FadeIn>
+        <FadeIn delay={0.4}>
           <Contact />
         </FadeIn>
       </main>
