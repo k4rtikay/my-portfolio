@@ -1,3 +1,5 @@
+import ClockWidget from "./clock-widget";
+
 export function Bento() {
   return (
     <section className="mb-16">
@@ -9,9 +11,8 @@ export function Bento() {
           <p className="text-sm font-medium text-foreground">Music widget</p>
           <p className="text-xs text-muted-foreground mt-1">Featured player</p>
         </div>
-        <div className="sm:col-span-3 sm:row-span-1 rounded-2xl border border-border/60 bg-card/60 p-4 shadow-sm">
-          <p className="text-sm font-medium text-foreground">Time + weather</p>
-          <p className="text-xs text-muted-foreground mt-1">At-a-glance</p>
+        <div className="sm:col-span-3 sm:row-span-1 rounded-2xl border border-border/60 bg-card/60 overflow-hidden shadow-sm">
+          <ClockWidget />
         </div>
         <div className="sm:col-span-2 sm:row-span-1 rounded-2xl border border-border/60 bg-card/60 p-4 shadow-sm">
           <p className="text-sm font-medium text-foreground">Tools</p>
