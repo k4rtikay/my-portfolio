@@ -47,7 +47,7 @@ const getTimeOfDay = (hours:number) => {
 export default function ClockWidget() {
     const [time, setTime] = useState(new Date());
 
-    const [testHour, setTestHour] = useState(12);
+    // const [testHour, setTestHour] = useState(12);
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -94,7 +94,7 @@ export default function ClockWidget() {
                     animate={{ color: currentTheme.subtext }}
                     transition={{ duration: 2 }}
                 >
-                    Brooklyn • 72°
+                    New Delhi • IN
                 </motion.p>
             </div>
 
