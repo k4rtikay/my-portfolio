@@ -101,7 +101,7 @@ export function Projects() {
                                     href={project.demo}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-sm sm:text-xs tracking-wide font-medium text-white bg-blue-500 hover:bg-blue-600 dark:bg-blue-500 dark:hover:bg-blue-400 transition-all inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg shadow-[0_4px_10px_0_rgba(0,0,0,0.15),inset_0_2px_4px_0_rgba(255,255,255,0.35)]"
+                                    className="text-sm sm:text-xs tracking-wide font-medium text-white bg-primary hover:bg-primary/90 transition-all inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg shadow-[0_4px_10px_0_rgba(0,0,0,0.15),inset_0_2px_4px_0_rgba(255,255,255,0.35)]"
                                 >
                                     {/* <ExternalLinkIcon size={12} /> */}
                                     Website
