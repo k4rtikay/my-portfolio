@@ -14,6 +14,7 @@ const projects = [
         github: "https://github.com/k4rtikay/ai-folio",
         demo: "https://gitxhibit.vercel.app/",
         image: "/gitxhibit-demo-1.png",
+        icon: "/gitxhibit-icon.png",
         wip: false,
     },
     {
@@ -25,6 +26,7 @@ const projects = [
         github: "https://github.com/k4rtikay/ui-library",
         demo: "https://flow-kit-beta.vercel.app/",
         image: "/flow-kit-demo.png",
+        icon: "/flow-kit-icon.png",
         wip: true,
     },
     {
@@ -36,6 +38,7 @@ const projects = [
         github: "https://github.com/k4rtikay/pokedex",
         demo: "https://huedex.netlify.app/",
         image: "/huedex-demo.png",
+        icon: "/huedex-favicon-32x32.png",
         wip: false,
     },
 ];
@@ -43,10 +46,10 @@ const projects = [
 export function Projects() {
     return (
         <section className="mb-16">
-            <h2 className="text-base sm:text-sm font-medium text-muted-foreground tracking-wide mb-6">
+            <h2 className="font-[family-name:var(--font-fraunces)] text-lg text-foreground tracking-wider mb-6">
                 Projects
             </h2>
-            <div className="space-y-12">
+            <div className="">
                 {projects.map((project, index) => (
                     <motion.article
                         key={project.name}
@@ -57,15 +60,18 @@ export function Projects() {
                             delay: index * 0.1,
                             ease: [0.25, 0.46, 0.45, 0.94],
                         }}
-                        className="group -mx-4 sm:-mx-5 px-4 sm:px-5 py-4 rounded-xl transition-colors duration-300 ease-out hover:bg-muted/50"
+                        className="group -mx-4 sm:-mx-5 px-2 sm:px-5 py-2 rounded-lg transition-colors duration-300 ease-out hover:bg-muted"
                     >
                         {/* Text Content */}
-                        <div className="space-y-3">
+                        <div className="">
                             {/* Header: Title + Year/WIP */}
                             <div className="flex items-center justify-between">
-                                <h3 className="font-medium text-base sm:text-sm tracking-wide text-foreground">
-                                    {project.name}
-                                </h3>
+                                <div className="flex items-center gap-3">
+                                    <Image src={project.icon} alt={project.name} width={64} height={64} className="rounded-xs w-4 h-4" />
+                                    <h3 className="text-sm text-foreground">
+                                        {project.name}
+                                    </h3>
+                                </div>
                                 <div className="flex items-center gap-2">
                                     {project.wip && (
                                         <span className="text-[11px] font-semibold tracking-wider uppercase text-amber-700 dark:text-amber-400 bg-amber-100 dark:bg-amber-400/15 px-2.5 py-0.5 rounded-full border border-amber-200 dark:border-amber-400/20">
@@ -79,12 +85,12 @@ export function Projects() {
                             </div>
 
                             {/* Description */}
-                            <p className="text-muted-foreground text-base sm:text-sm leading-relaxed">
+                            {/* <p className="text-muted-foreground text-base sm:text-sm leading-relaxed">
                                 {project.description}
-                            </p>
+                            </p> */}
 
                             {/* Skill Pills */}
-                            <div className="flex flex-wrap gap-1.5">
+                            {/* <div className="flex flex-wrap gap-1.5">
                                 {project.skills.map((skill) => (
                                     <span
                                         key={skill}
@@ -93,17 +99,16 @@ export function Projects() {
                                         {skill}
                                     </span>
                                 ))}
-                            </div>
+                            </div> */}
 
                             {/* Links */}
-                            <div className="flex items-center gap-3 pt-2">
+                            {/* <div className="flex items-center gap-3 pt-2">
                                 <a
                                     href={project.demo}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-sm sm:text-xs tracking-wide font-medium text-white bg-primary hover:bg-primary/90 transition-all inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg shadow-[0_4px_10px_0_rgba(0,0,0,0.15),inset_0_2px_4px_0_rgba(255,255,255,0.35)]"
                                 >
-                                    {/* <ExternalLinkIcon size={12} /> */}
                                     Website
                                 </a>
                                 <a
@@ -112,14 +117,13 @@ export function Projects() {
                                     rel="noopener noreferrer"
                                     className="text-sm sm:text-xs tracking-wide font-medium text-foreground/90 hover:text-foreground bg-card/60 hover:bg-card transition-colors inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg shadow-[0_4px_10px_0_rgba(0,0,0,0.08),inset_0_2px_4px_0_rgba(255,255,255,0.35)]"
                                 >
-                                    {/* <CodeIcon size={12} /> */}
                                     Source
                                 </a>
-                            </div>
+                            </div> */}
                         </div>
 
                         {/* Project Image */}
-                        <div className="mt-4 overflow-hidden rounded-lg border border-border/60 shadow-sm">
+                        {/* <div className="mt-4 overflow-hidden rounded-lg border border-border/60 shadow-sm">
                             <Image
                                 src={project.image}
                                 alt={`${project.name} screenshot`}
@@ -127,7 +131,7 @@ export function Projects() {
                                 height={400}
                                 className="w-full h-auto object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                             />
-                        </div>
+                        </div> */}
                     </motion.article>
                 ))}
             </div>

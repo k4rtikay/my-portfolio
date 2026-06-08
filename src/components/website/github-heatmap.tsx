@@ -5,8 +5,20 @@ import { ActivityCalendar } from "react-activity-calendar";
 import { useTheme } from "next-themes";
 
 const heatmapTheme = {
-    light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
-    dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
+  light: [
+    "#f8fafc",
+    "#fde68a",
+    "#f59e0b",
+    "#ea580c",
+    "#9a3412",
+  ],
+  dark: [
+    "#161b22",
+    "#7c2d12",
+    "#c2410c",
+    "#ea580c",
+    "#fb923c",
+  ],
 };
 
 async function fetchHeatmapData() {
@@ -35,7 +47,7 @@ export function GithubHeatmap() {
     if (!mounted || data.length === 0) {
         return (
             <section className="mb-16">
-                <h2 className="text-base sm:text-sm font-medium text-muted-foreground tracking-wide mb-6">
+                <h2 className="font-[family-name:var(--font-fraunces)] text-lg text-foreground tracking-wider mb-4">
                     Activity
                 </h2>
                 <div className="h-[162px]" />
@@ -45,7 +57,7 @@ export function GithubHeatmap() {
 
     return (
         <section className="mb-16">
-            <h2 className="text-base sm:text-sm font-medium text-muted-foreground tracking-wide mb-6">
+            <h2 className="font-[family-name:var(--font-fraunces)] text-lg text-foreground tracking-wide mb-6">
                 Activity
             </h2>
             <div className="relative z-[1] w-full overflow-x-auto bg-background heatmap-scroll">

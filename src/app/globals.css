@@ -136,6 +136,11 @@ body {
   }
 }
 
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+}
+
 
 
 .heatmap-scroll {
