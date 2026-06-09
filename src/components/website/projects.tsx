@@ -1,8 +1,4 @@
-"use client";
-
-import Image from "next/image";
-import { ExternalLinkIcon, CodeIcon } from "lucide-react";
-import { motion } from "motion/react";
+import { ProjectRow } from "./project-row";
 
 const projects = [
     {
@@ -13,7 +9,7 @@ const projects = [
         skills: ["Next.js", "TypeScript", "Drizzle ORM", "PostgreSQL", "Groq AI", "Octokit"],
         github: "https://github.com/k4rtikay/ai-folio",
         demo: "https://gitxhibit.vercel.app/",
-        image: "/gitxhibit-demo-1.png",
+        image: ["/gitxhibit-3.png","/gitxhibit-2.png","/gitxhibit-1.png"],
         icon: "/gitxhibit-icon.png",
         wip: false,
     },
@@ -25,7 +21,7 @@ const projects = [
         skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Motion"],
         github: "https://github.com/k4rtikay/ui-library",
         demo: "https://flow-kit-beta.vercel.app/",
-        image: "/flow-kit-demo.png",
+        image: ["/flowkit-3.png","/flowkit-2.png","/flowkit-1.png"],
         icon: "/flow-kit-icon.png",
         wip: true,
     },
@@ -37,7 +33,7 @@ const projects = [
         skills: ["React", "Firebase", "ColorThief", "Framer Motion", "SCSS", "Vite"],
         github: "https://github.com/k4rtikay/pokedex",
         demo: "https://huedex.netlify.app/",
-        image: "/huedex-demo.png",
+        image: ["/Huedex-ss-3.png","/Huedex-ss-2.png","/Huedex-ss-1.png"],
         icon: "/huedex-favicon-32x32.png",
         wip: false,
     },
@@ -51,88 +47,7 @@ export function Projects() {
             </h2>
             <div className="">
                 {projects.map((project, index) => (
-                    <motion.article
-                        key={project.name}
-                        initial={{ opacity: 0, y: 16 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{
-                            duration: 0.4,
-                            delay: index * 0.1,
-                            ease: [0.25, 0.46, 0.45, 0.94],
-                        }}
-                        className="group -mx-4 sm:-mx-5 px-2 sm:px-5 py-2 rounded-lg transition-colors duration-300 ease-out hover:bg-muted"
-                    >
-                        {/* Text Content */}
-                        <div className="">
-                            {/* Header: Title + Year/WIP */}
-                            <div className="flex items-center justify-between">
-                                <div className="flex items-center gap-3">
-                                    <Image src={project.icon} alt={project.name} width={64} height={64} className="rounded-xs w-4 h-4" />
-                                    <h3 className="text-sm text-foreground">
-                                        {project.name}
-                                    </h3>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    {project.wip && (
-                                        <span className="text-[11px] font-semibold tracking-wider uppercase text-amber-700 dark:text-amber-400 bg-amber-100 dark:bg-amber-400/15 px-2.5 py-0.5 rounded-full border border-amber-200 dark:border-amber-400/20">
-                                            WIP
-                                        </span>
-                                    )}
-                                    <span className="text-xs text-muted-foreground font-normal tabular-nums">
-                                        {project.year}
-                                    </span>
-                                </div>
-                            </div>
-
-                            {/* Description */}
-                            {/* <p className="text-muted-foreground text-base sm:text-sm leading-relaxed">
-                                {project.description}
-                            </p> */}
-
-                            {/* Skill Pills */}
-                            {/* <div className="flex flex-wrap gap-1.5">
-                                {project.skills.map((skill) => (
-                                    <span
-                                        key={skill}
-                                        className="text-xs font-normal text-muted-foreground bg-muted/80 dark:bg-muted/50 px-2.5 py-0.5 rounded-full border border-border/50 transition-colors"
-                                    >
-                                        {skill}
-                                    </span>
-                                ))}
-                            </div> */}
-
-                            {/* Links */}
-                            {/* <div className="flex items-center gap-3 pt-2">
-                                <a
-                                    href={project.demo}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-sm sm:text-xs tracking-wide font-medium text-white bg-primary hover:bg-primary/90 transition-all inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg shadow-[0_4px_10px_0_rgba(0,0,0,0.15),inset_0_2px_4px_0_rgba(255,255,255,0.35)]"
-                                >
-                                    Website
-                                </a>
-                                <a
-                                    href={project.github}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-sm sm:text-xs tracking-wide font-medium text-foreground/90 hover:text-foreground bg-card/60 hover:bg-card transition-colors inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg shadow-[0_4px_10px_0_rgba(0,0,0,0.08),inset_0_2px_4px_0_rgba(255,255,255,0.35)]"
-                                >
-                                    Source
-                                </a>
-                            </div> */}
-                        </div>
-
-                        {/* Project Image */}
-                        {/* <div className="mt-4 overflow-hidden rounded-lg border border-border/60 shadow-sm">
-                            <Image
-                                src={project.image}
-                                alt={`${project.name} screenshot`}
-                                width={650}
-                                height={400}
-                                className="w-full h-auto object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                            />
-                        </div> */}
-                    </motion.article>
+                    <ProjectRow key={project.name} project={project} index={index} />
                 ))}
             </div>
         </section>
