@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="min-h-screen w-full">
       <div className="absolute top-0 z-[-2] h-screen w-full bg-background bg-[radial-gradient(100%_50%_at_50%_0%,rgba(245,158,11,0.18)_0,rgba(245,158,11,0)_55%,rgba(245,158,11,0)_100%)]"></div>      <Header />
-      <main className="mx-auto w-full max-w-[650px] py-24 md:py-32 flex-1 border border-px border-red">
+      <main className="mx-auto w-full max-w-[640px] py-24 md:py-32 flex-1">
         <FadeIn delay={0}>
           <div className="mb-16">
             <Hero />

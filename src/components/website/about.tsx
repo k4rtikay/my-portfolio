@@ -2,11 +2,11 @@ import { HelloButton } from "../ui/hello-button";
 
 export function About() {
     return (
-        <section>
+        <section className="w-full">
             {/* <h2 className="text-base sm:text-sm font-medium text-muted-foreground tracking-wide mb-4">
                 About
             </h2> */}
-            <div className="space-y-4 text-base text-muted-foreground sm:text-sm tracking-wide leading-relaxed">
+            <div className="space-y-4 text-pretty text-muted-foreground sm:text-sm tracking-wide leading-relaxed">
                 <p>
                     <span className="text-foreground">I engineer the physical web.</span> I am a frontend developer obsessed with interaction design, turning complex motion physics and raw UI concepts into seamless Next.js applications.
                 </p>

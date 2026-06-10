@@ -5,7 +5,7 @@ export default function TegakiFont() {
     return (
         <TegakiRenderer
             font={bundle}
-            time={{ mode: 'uncontrolled', speed: 3.5, loop: false }}
+            time={{ mode: 'uncontrolled', speed: 8, loop: false }}
             style={{ fontSize: 36 }}
         >
             Kartikeya
