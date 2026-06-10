@@ -38,7 +38,7 @@ export function ProjectRow({ project, index }: ProjectRowProps) {
                 delay: index * 0.1,
                 ease: [0.25, 0.46, 0.45, 0.94],
             }}
-            className="w-full block group relative z-0 hover:z-50 -mx-4 sm:-mx-5 px-2 sm:px-5 py-2 rounded-lg transition-colors duration-240 ease-out hover:bg-muted"
+            className="w-full block group relative z-0 hover:z-50 px-2 sm:px-4 py-2 rounded-lg transition-colors duration-240 ease-out hover:bg-muted"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             href={project.demo}

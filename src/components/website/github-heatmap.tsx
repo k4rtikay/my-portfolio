@@ -60,19 +60,19 @@ export function GithubHeatmap() {
             <h2 className="font-[family-name:var(--font-fraunces)] text-lg text-foreground tracking-wide mb-6">
                 Activity
             </h2>
-            <div className="relative z-[1] w-full overflow-x-auto bg-background heatmap-scroll">
+            <div className="relative z-[1] w-full overflow-x-auto heatmap-scroll px-4 hover:scale-101 transition-transform duration-240 ease-out">
                 <ActivityCalendar
                     data={data}
-                    fontSize={11}
-                    blockSize={10}
-                    blockMargin={3}
-                    blockRadius={1}
+                    fontSize={10}
+                    blockSize={9}
+                    blockMargin={2.5}
+                    blockRadius={2.2}
                     colorScheme={resolvedTheme === "dark" ? "dark" : "light"}
                     theme={heatmapTheme}
                     labels={{
                         totalCount: "{{count}} contributions in the last year",
                     }}
-                    showWeekdayLabels
+                    
                 />
             </div>
         </section>
