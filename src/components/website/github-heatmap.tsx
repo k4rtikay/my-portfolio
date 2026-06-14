@@ -46,7 +46,7 @@ export function GithubHeatmap() {
 
     if (!mounted || data.length === 0) {
         return (
-            <section className="mb-16">
+            <section>
                 <h2 className="font-[family-name:var(--font-fraunces)] text-lg text-foreground tracking-wider mb-4">
                     Activity
                 </h2>
@@ -56,7 +56,7 @@ export function GithubHeatmap() {
     }
 
     return (
-        <section className="mb-16">
+        <section>
             <h2 className="font-[family-name:var(--font-fraunces)] text-lg text-foreground tracking-wide mb-6">
                 Activity
             </h2>
@@ -64,8 +64,8 @@ export function GithubHeatmap() {
                 <ActivityCalendar
                     data={data}
                     fontSize={10}
-                    blockSize={9}
-                    blockMargin={2.5}
+                    blockSize={8.5}
+                    blockMargin={2.2}
                     blockRadius={2.2}
                     colorScheme={resolvedTheme === "dark" ? "dark" : "light"}
                     theme={heatmapTheme}

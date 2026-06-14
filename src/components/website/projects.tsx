@@ -41,7 +41,7 @@ const projects = [
 
 export function Projects() {
     return (
-        <section className="mb-16">
+        <section>
             <h2 className="font-[family-name:var(--font-fraunces)] text-lg text-foreground tracking-wider mb-6">
                 Projects
             </h2>
