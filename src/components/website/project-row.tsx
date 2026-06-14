@@ -23,9 +23,9 @@ export function ProjectRow({ project, index }: ProjectRowProps) {
     const [isHovered, setIsHovered] = useState(false);
 
     const stackVariants = [
-        { rotate: -6, x: -10, y: 10, zIndex: 50 },
-        { rotate: 4, x: 20, y: -10, zIndex: 55},
-        { rotate: 12, x: 50, y: -20, zIndex: 60 },
+        { rotate: -6, x: -10, y: 20, zIndex: 50 },
+        { rotate: 6, x: 60, y: 10, zIndex: 55},
+        { rotate: 2, x: 30, y: 0, zIndex: 60 },
     ];
 
     return (
@@ -72,8 +72,8 @@ export function ProjectRow({ project, index }: ProjectRowProps) {
                                 // Origin is bottom-left so they fan out like a deck of cards
                                 className="absolute origin-bottom-left overflow-hidden rounded-xl shadow-2xl border border-border-muted"
                                 style={{
-                                    width: 200,
-                                    height: 120,
+                                    width: 160,
+                                    height: 100,
                                     zIndex: stackVariants[index].zIndex,
                                 }}
                                 initial={{
