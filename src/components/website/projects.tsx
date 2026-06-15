@@ -1,4 +1,5 @@
 import { ProjectRow } from "./project-row";
+import { FadeIn } from "./fade-in";
 
 const projects = [
     {
@@ -47,7 +48,12 @@ export function Projects() {
             </h2>
             <div className="">
                 {projects.map((project, index) => (
-                    <ProjectRow key={project.name} project={project} index={index} />
+                    <FadeIn
+                    delay={index*0.01 + 0.2}
+                    key={project.name}
+                    >
+                        <ProjectRow project={project} index={index} />
+                    </FadeIn>
                 ))}
             </div>
         </section>

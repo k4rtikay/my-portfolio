@@ -47,7 +47,19 @@ export function ProjectRow({ project, index }: ProjectRowProps) {
         >
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                    <Image src={project.icon} alt={project.name} width={64} height={64} className="rounded-xs w-4 h-4" />
+                    <motion.div
+                    initial={{y:10, opacity:0, scale:0}}
+                    animate={{y:0, opacity:1, scale:1}}
+                    transition={{type:"spring", stiffness:450, damping:100, delay:0.1}}
+                    >
+                        <Image
+                        src={project.icon}
+                        alt={project.name}
+                        width={64}
+                        height={64}
+                        className="rounded-xs w-4 h-4"
+                        />
+                    </motion.div>
                     <h3 className="text-sm text-foreground group-hover:text-primary transition-colors duration-240 ease-out">
                         {project.name}
                     </h3>
