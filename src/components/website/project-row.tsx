@@ -63,17 +63,15 @@ export function ProjectRow({ project, index }: ProjectRowProps) {
                     </span>
                 </div>
             </div>
-            <div className="absolute right-10 top-1/2 -translate-y-1/2 pointer-events-none">
+            <div className="absolute right-40 top-1/2 -translate-y-1/2 pointer-events-none">
                 <AnimatePresence>
                     {isHovered &&
                         project.image.map((src, index) => (
                             <motion.div
                                 key={index}
                                 // Origin is bottom-left so they fan out like a deck of cards
-                                className="absolute origin-bottom-left overflow-hidden rounded-xl shadow-2xl border border-border-muted"
+                                className="absolute origin-bottom-left overflow-hidden rounded-xl shadow-2xl border border-border-muted w-24 h-16 md:w-32 md:h-20"
                                 style={{
-                                    width: 160,
-                                    height: 100,
                                     zIndex: stackVariants[index].zIndex,
                                 }}
                                 initial={{
