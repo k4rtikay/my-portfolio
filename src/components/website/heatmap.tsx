@@ -28,7 +28,7 @@ export function HeatmapUI({ data }: { data: any[] }) {
             <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
+                transition={{ duration: 0.24, ease: "easeOut" }}
                 className="relative z-[1] w-full overflow-x-auto heatmap-scroll px-4 hover:scale-101 transition-transform duration-240 ease-out [-webkit-mask-image:linear-gradient(to_right,black_85%,transparent_100%)] [mask-image:linear-gradient(to_right,black_85%,transparent_100%)] md:[-webkit-mask-image:none] md:[mask-image:none]">
                 <ActivityCalendar
                     data={data}
