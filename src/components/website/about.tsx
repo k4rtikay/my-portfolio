@@ -1,5 +1,3 @@
-import { HelloButton } from "../ui/hello-button";
-
 export function About() {
     return (
         <section className="w-full">
