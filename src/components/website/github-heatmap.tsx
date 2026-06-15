@@ -60,7 +60,7 @@ export function GithubHeatmap() {
             <h2 className="font-[family-name:var(--font-fraunces)] text-lg text-foreground tracking-wide mb-6">
                 Activity
             </h2>
-            <div className="relative z-[1] w-full overflow-x-auto heatmap-scroll px-4 hover:scale-101 transition-transform duration-240 ease-out">
+            <div className="relative z-[1] w-full overflow-x-auto heatmap-scroll px-4 hover:scale-101 transition-transform duration-240 ease-out [-webkit-mask-image:linear-gradient(to_right,black_85%,transparent_100%)] [mask-image:linear-gradient(to_right,black_85%,transparent_100%)] md:[-webkit-mask-image:none] md:[mask-image:none]">
                 <ActivityCalendar
                     data={data}
                     fontSize={10}
@@ -71,8 +71,7 @@ export function GithubHeatmap() {
                     theme={heatmapTheme}
                     labels={{
                         totalCount: "{{count}} contributions in the last year",
-                    }}
-                    
+                    }}  
                 />
             </div>
         </section>
