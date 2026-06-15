@@ -1,5 +1,17 @@
 import { ProjectRow } from "./project-row";
 import { FadeIn } from "./fade-in";
+import gitxhibit3 from "@/public/gitxhibit-3.png";
+import gitxhibit2 from "@/public/gitxhibit-2.png";
+import gitxhibit1 from "@/public/gitxhibit-1.png";
+import gitxhibitIcon from "@/public/gitxhibit-icon.png";
+import flowkit3 from "@/public/flowkit-3.png";
+import flowkit2 from "@/public/flowkit-2.png";
+import flowkit1 from "@/public/flowkit-1.png";
+import flowKitIcon from "@/public/flow-kit-icon.png";
+import huedex3 from "@/public/Huedex-ss-3.png";
+import huedex2 from "@/public/Huedex-ss-2.png";
+import huedex1 from "@/public/Huedex-ss-1.png";
+import huedexIcon from "@/public/huedex-favicon-32x32.png";
 
 const projects = [
     {
@@ -10,8 +22,8 @@ const projects = [
         skills: ["Next.js", "TypeScript", "Drizzle ORM", "PostgreSQL", "Groq AI", "Octokit"],
         github: "https://github.com/k4rtikay/ai-folio",
         demo: "https://gitxhibit.vercel.app/",
-        image: ["/gitxhibit-3.png","/gitxhibit-2.png","/gitxhibit-1.png"],
-        icon: "/gitxhibit-icon.png",
+        image: [gitxhibit3, gitxhibit2, gitxhibit1],
+        icon: gitxhibitIcon,
         wip: false,
     },
     {
@@ -22,8 +34,8 @@ const projects = [
         skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Motion"],
         github: "https://github.com/k4rtikay/ui-library",
         demo: "https://flow-kit-beta.vercel.app/",
-        image: ["/flowkit-3.png","/flowkit-2.png","/flowkit-1.png"],
-        icon: "/flow-kit-icon.png",
+        image: [flowkit3, flowkit2, flowkit1],
+        icon: flowKitIcon,
         wip: true,
     },
     {
@@ -34,8 +46,8 @@ const projects = [
         skills: ["React", "Firebase", "ColorThief", "Framer Motion", "SCSS", "Vite"],
         github: "https://github.com/k4rtikay/pokedex",
         demo: "https://huedex.netlify.app/",
-        image: ["/Huedex-ss-3.png","/Huedex-ss-2.png","/Huedex-ss-1.png"],
-        icon: "/huedex-favicon-32x32.png",
+        image: [huedex3, huedex2, huedex1],
+        icon: huedexIcon,
         wip: false,
     },
 ];

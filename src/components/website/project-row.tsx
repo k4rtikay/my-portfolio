@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 
@@ -12,8 +12,8 @@ interface ProjectRowProps {
         skills: string[];
         github: string;
         demo: string;
-        image: string[];
-        icon: string;
+        image: StaticImageData[];
+        icon: StaticImageData;
         wip: boolean;
     };
     index: number;
@@ -120,6 +120,7 @@ export function ProjectRow({ project, index }: ProjectRowProps) {
                                     alt={`${project.name} screenshot ${index + 1}`}
                                     fill
                                     className="object-cover"
+                                    placeholder="blur"
                                 />
                             </motion.div>
                         ))}
