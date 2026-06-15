@@ -20,7 +20,7 @@ export function Contact() {
                 Connect
             </h2>
 
-            <div className="space-y-2 mt-4 px-4 text-muted-foreground text-base sm:text-sm leading-loose tracking-wide">
+            <div className="text-sm space-y-2 mt-4 px-4 text-muted-foreground text-base sm:text-sm leading-loose tracking-wide">
                 <p>
                     <HoverSwap
                         href={socials[3].href}
