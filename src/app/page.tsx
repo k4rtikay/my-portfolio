@@ -15,9 +15,6 @@ export default function Home() {
             </div>
           </div>
         </FadeIn>
-        {/* <FadeIn delay={0.1}>
-          <Bento />
-        </FadeIn> */}
         <FadeIn delay={0.2}>
           <Projects />
         </FadeIn>

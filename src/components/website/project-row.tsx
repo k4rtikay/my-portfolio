@@ -60,7 +60,7 @@ export function ProjectRow({ project, index }: ProjectRowProps) {
                         className="rounded-xs w-4 h-4"
                         />
                     </motion.div>
-                    <h3 className="text-sm text-foreground group-hover:text-primary transition-colors duration-240 ease-out">
+                    <h3 className="text-sm text-foreground group-hover:text-primary group-focus:text-primary transition-colors duration-240 ease-out">
                         {project.name}
                     </h3>
                 </div>
