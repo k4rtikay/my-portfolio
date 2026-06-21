@@ -4,3 +4,5 @@ export { Projects } from "./projects";
 export { Contact } from "./contact";
 export { Footer } from "./footer";
 export { Activity } from "./activity";
+export { Work } from "./work";
+

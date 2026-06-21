@@ -8,11 +8,11 @@ interface ProjectRowProps {
     project: {
         name: string;
         year: string;
-        description: string;
-        skills: string[];
-        github: string;
-        demo: string;
-        image: StaticImageData[];
+        description?: string;
+        skills?: string[];
+        github?: string;
+        demo?: string;
+        image?: StaticImageData[];
         icon: StaticImageData;
         wip: boolean;
     };
@@ -24,7 +24,7 @@ export function ProjectRow({ project, index }: ProjectRowProps) {
 
     const stackVariants = [
         { rotate: -6, x: -10, y: 20, zIndex: 50 },
-        { rotate: 6, x: 60, y: 10, zIndex: 55},
+        { rotate: 6, x: 60, y: 10, zIndex: 55 },
         { rotate: 2, x: 30, y: 0, zIndex: 60 },
     ];
 
@@ -48,19 +48,24 @@ export function ProjectRow({ project, index }: ProjectRowProps) {
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                     <motion.div
-                    initial={{y:10, opacity:0, scale:0}}
-                    animate={{y:0, opacity:1, scale:1}}
-                    transition={{type:"spring", stiffness:400, damping:45, delay: index*0.01 + 0.2}}
+                        initial={{ y: 10, opacity: 0, scale: 0 }}
+                        animate={{ y: 0, opacity: 1, scale: 1 }}
+                        transition={{
+                            type: "spring",
+                            stiffness: 400,
+                            damping: 45,
+                            delay: index * 0.01 + 0.2,
+                        }}
                     >
                         <Image
-                        src={project.icon}
-                        alt={project.name}
-                        width={64}
-                        height={64}
-                        className="rounded-xs w-4 h-4"
+                            src={project.icon}
+                            alt={project.name}
+                            width={64}
+                            height={64}
+                            className="rounded-xs w-4 h-4"
                         />
                     </motion.div>
-                    <h3 className="text-sm text-foreground group-hover:text-primary group-focus:text-primary transition-colors duration-240 ease-out">
+                    <h3 className="text-sm text-foreground group-hover:text-primary group-focus-visible:text-primary transition-colors duration-240 ease-out">
                         {project.name}
                     </h3>
                 </div>
@@ -78,7 +83,7 @@ export function ProjectRow({ project, index }: ProjectRowProps) {
             <div className="absolute right-40 top-1/2 -translate-y-1/2 pointer-events-none">
                 <AnimatePresence>
                     {isHovered &&
-                        project.image.map((src, index) => (
+                        project.image && project.image.map((src, index) => (
                             <motion.div
                                 key={index}
                                 // Origin is bottom-left so they fan out like a deck of cards
@@ -91,7 +96,7 @@ export function ProjectRow({ project, index }: ProjectRowProps) {
                                     scale: 0.5,
                                     rotate: 0,
                                     x: 0,
-                                    y: 0
+                                    y: 0,
                                 }}
                                 animate={{
                                     opacity: 1,
@@ -105,7 +110,7 @@ export function ProjectRow({ project, index }: ProjectRowProps) {
                                     scale: 0.5,
                                     rotate: 0,
                                     x: 0,
-                                    y: 0
+                                    y: 0,
                                 }}
                                 transition={{
                                     type: "spring",
