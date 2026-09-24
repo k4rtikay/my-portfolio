@@ -1,8 +1,8 @@
 "use client";
 
-import { ActivityCalendar } from "react-activity-calendar";
+import { ActivityCalendar, type Activity } from "react-activity-calendar";
 import { useTheme } from "next-themes";
-import { useState, useEffect } from "react";
+import { useSyncExternalStore } from "react";
 import { motion } from "motion/react";
 
 const heatmapTheme = {
@@ -10,13 +10,15 @@ const heatmapTheme = {
     dark: ["#161b22", "#7c2d12", "#c2410c", "#ea580c", "#fb923c"],
 };
 
-export function HeatmapUI({ data }: { data: any[] }) {
-    const { resolvedTheme } = useTheme();
-    const [mounted, setMounted] = useState(false);
+const emptySubscribe = () => () => {};
 
-    useEffect(() => {
-        setMounted(true);
-    }, []);
+export function HeatmapUI({ data }: { data: Activity[] }) {
+    const { resolvedTheme } = useTheme();
+    const mounted = useSyncExternalStore(
+        emptySubscribe,
+        () => true,
+        () => false
+    );
 
     if (!data || data.length === 0) return null;
 
